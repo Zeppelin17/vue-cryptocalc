@@ -15,43 +15,11 @@ export default {
     }
   },
   mounted() {
-    /**Mirar esto:
-     * https://github.com/ccxt/ccxt
-     * y esto:
-     * https://github.com/ccxt/ccxt/issues/1098
-     */
-    let url = 'https://api.kraken.com/0/public/AssetPairs'
+    let url = 'https://cors-anywhere.herokuapp.com/https://api.kraken.com/0/public/AssetPairs?pair=xbteur,etheur,dasheur,ltceur,ethxbt,dashxbt,ltcxbt'
 
-    let config = {
-      method: 'get',
-      headers: {
-        'Access-Control-Allow-Origin': '*'
-      },
-      params: {
-        pair: 'xbteur'
-      },
-      // `timeout` specifies the number of milliseconds before the request times out.
-      // If the request takes longer than `timeout`, the request will be aborted.
-      timeout: 5000, // default is `0` (no timeout)
-
-      // `withCredentials` indicates whether or not cross-site Access-Control requests
-      // should be made using credentials
-      withCredentials: true, // default
-      auth: {
-        username: 'janedoe',
-        password: 's00pers3cret'
-      },
-
-      responseType: 'json', // default
-      responseEncoding: 'utf8', // default
-
-      // `maxContentLength` defines the max size of the http response content in bytes allowed
-      maxContentLength: 2000,
-
-    }
-
-    Vue.axios.get(url, config)
+    Vue.axios.get(url)
       .then((response) => {
+        console.log(":::KRAKEN API DATA:::")
         console.log(response.data)
       })
       .catch(error => {
