@@ -1,0 +1,1 @@
+export const FETCH_KRAKEN_PAIRS = 'fetchKrakenPairs'

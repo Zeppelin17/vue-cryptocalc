@@ -1,0 +1,1 @@
+export const SET_KRAKEN_PAIRS = 'setKrakenPairs'

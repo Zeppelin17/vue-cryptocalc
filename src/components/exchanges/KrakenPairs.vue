@@ -2,30 +2,52 @@
   <div class="hello">
     <img class="logo" alt="Kraken logo" src="../../assets/logo-kraken.png">
     <h1>Kraken Pairs Status</h1>
+
+    <transition name="fade">
+        <div v-if="krakenData.length">
+          <ul>
+            <li v-for="pair in krakenData" :key="pair.pair">
+              {{ pair.pair }}
+              <br/>
+            </li>
+          </ul>
+        </div>
+        <div v-else>
+          <p>Loading...</p>
+        </div>
+    </transition>
+
   </div>
 </template>
 
 <script>
-import Vue from 'vue'
+import { FETCH_KRAKEN_PAIRS } from '@/store/actionTypes'
+
 export default {
   name: 'KrakenPairs',
   data() {
     return {
-
+      
     }
   },
-  mounted() {
-    let url = 'https://cors-anywhere.herokuapp.com/https://api.kraken.com/0/public/AssetPairs?pair=xbteur,etheur,dasheur,ltceur,ethxbt,dashxbt,ltcxbt'
 
-    Vue.axios.get(url)
-      .then((response) => {
-        console.log(":::KRAKEN API DATA:::")
-        console.log(response.data)
-      })
-      .catch(error => {
-        console.log(":::ERROR KRAKEN API GET PAIR:::")
-        console.log(error)
-      })
+  computed: {
+    /**
+     * Returns the current state of Kraken Pairs
+     */
+    krakenData() {
+      return this.$store.state.krakenPairs.pairs
+    }
+  },
+
+  /**
+   * Before the app is mounted all the data begins to be fetched from the API's
+   */
+  beforeMount() { 
+    if (!this.$store.state.krakenPairs.pairs.length) {
+      this.$store.dispatch(FETCH_KRAKEN_PAIRS)
+    }
+    
   }
 }
 </script>
