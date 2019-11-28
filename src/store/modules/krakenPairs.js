@@ -23,7 +23,7 @@ export const actions = {
 
 export const mutations = {
     [SET_KRAKEN_PAIRS](currentState, pairsData) {
-        
+        //console.log(pairsData)
         let pairsArray = []
         Object.keys(pairsData.result).forEach(key => {
             let tmpObj = {

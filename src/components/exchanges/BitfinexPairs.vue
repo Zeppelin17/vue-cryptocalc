@@ -1,12 +1,12 @@
 <template>
   <div class="hello">
-    <img class="logo" alt="Kraken logo" src="../../assets/logo-kraken.png">
-    <h2>Kraken Pairs Status</h2>
+    <img class="logo" alt="Bitfinex logo" src="../../assets/logo-bitfinex.png">
+    <h2>Bitfinex Pairs Status</h2>
 
     <transition name="fade">
-        <div v-if="krakenData.length">
+        <div v-if="bitfinexData.length">
           <ul>
-            <li v-for="pair in krakenData" :key="pair.pair"> 
+            <li v-for="pair in bitfinexData" :key="pair.pair"> 
               {{ pair.pair }}
               <br/>
             </li>
@@ -21,10 +21,10 @@
 </template>
 
 <script>
-import { FETCH_KRAKEN_PAIRS } from '@/store/actionTypes'
+import { FETCH_BITFINEX_PAIRS } from '@/store/actionTypes'
 
 export default {
-  name: 'KrakenPairs',
+  name: 'BitfinexPairs',
   data() {
     return {
       
@@ -33,10 +33,10 @@ export default {
 
   computed: {
     /**
-     * Returns the current state of Kraken Pairs
+     * Returns the current state of Bitfinex Pairs
      */
-    krakenData() {
-      return this.$store.state.krakenPairs.pairs
+    bitfinexData() {
+      return this.$store.state.bitfinexPairs.pairs
     }
   },
 
@@ -44,8 +44,8 @@ export default {
    * Before the app is mounted all the data begins to be fetched from the API's
    */
   beforeMount() { 
-    if (!this.$store.state.krakenPairs.pairs.length) {
-      this.$store.dispatch(FETCH_KRAKEN_PAIRS)
+    if (!this.$store.state.bitfinexPairs.pairs.length) {
+      this.$store.dispatch(FETCH_BITFINEX_PAIRS)
     }
     
   }
