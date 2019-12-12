@@ -8,37 +8,37 @@ export default {
      */
 
     getPairInfoBTCUSD() {
-        let url = 'https://cors-anywhere.herokuapp.com/https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT'
+        let url = 'https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT'
         
         return Vue.axios.get(url, {timeout: 5000}) 
     },
     getPairInfoETHUSD() {
-        let url = 'https://cors-anywhere.herokuapp.com/https://api.binance.com/api/v3/ticker/24hr?symbol=ETHUSDT'
+        let url = 'https://api.binance.com/api/v3/ticker/24hr?symbol=ETHUSDT'
         
         return Vue.axios.get(url, {timeout: 5000}) 
     },
     getPairInfoDSHUSD() {
-        let url = 'https://cors-anywhere.herokuapp.com/https://api.binance.com/api/v3/ticker/24hr?symbol=DASHUSDT'
+        let url = 'https://api.binance.com/api/v3/ticker/24hr?symbol=DASHUSDT'
         
         return Vue.axios.get(url, {timeout: 5000}) 
     },
     getPairInfoLTCUSD() {
-        let url = 'https://cors-anywhere.herokuapp.com/https://api.binance.com/api/v3/ticker/24hr?symbol=LTCUSDT'
+        let url = 'https://api.binance.com/api/v3/ticker/24hr?symbol=LTCUSDT'
         
         return Vue.axios.get(url, {timeout: 5000}) 
     },
     getPairInfoETHBTC() {
-        let url = 'https://cors-anywhere.herokuapp.com/https://api.binance.com/api/v3/ticker/24hr?symbol=ETHBTC'
+        let url = 'https://api.binance.com/api/v3/ticker/24hr?symbol=ETHBTC'
         
         return Vue.axios.get(url, {timeout: 5000}) 
     },
     getPairInfoDSHBTC() {
-        let url = 'https://cors-anywhere.herokuapp.com/https://api.binance.com/api/v3/ticker/24hr?symbol=DASHBTC'
+        let url = 'https://api.binance.com/api/v3/ticker/24hr?symbol=DASHBTC'
         
         return Vue.axios.get(url, {timeout: 5000}) 
     },
     getPairInfoLTCBTC() {
-        let url = 'https://cors-anywhere.herokuapp.com/https://api.binance.com/api/v3/ticker/24hr?symbol=LTCBTC'
+        let url = 'https://api.binance.com/api/v3/ticker/24hr?symbol=LTCBTC'
         
         return Vue.axios.get(url, {timeout: 5000}) 
     },

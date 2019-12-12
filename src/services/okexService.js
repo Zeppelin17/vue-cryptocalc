@@ -8,37 +8,37 @@ export default {
      */
 
     getPairInfoBTCUSD() {
-        let url = 'https://cors-anywhere.herokuapp.com/https://www.okex.com/api/spot/v3/instruments/BTC-USDT/ticker'
+        let url = 'https://www.okex.com/api/spot/v3/instruments/BTC-USDT/ticker'
         
         return Vue.axios.get(url, {timeout: 5000}) 
     },
     getPairInfoETHUSD() {
-        let url = 'https://cors-anywhere.herokuapp.com/https://www.okex.com/api/spot/v3/instruments/ETH-USDT/ticker'
+        let url = 'https://www.okex.com/api/spot/v3/instruments/ETH-USDT/ticker'
         
         return Vue.axios.get(url, {timeout: 5000}) 
     },
     getPairInfoDSHUSD() {
-        let url = 'https://cors-anywhere.herokuapp.com/https://www.okex.com/api/spot/v3/instruments/DASH-USDT/ticker'
+        let url = 'https://www.okex.com/api/spot/v3/instruments/DASH-USDT/ticker'
         
         return Vue.axios.get(url, {timeout: 5000}) 
     },
     getPairInfoLTCUSD() {
-        let url = 'https://cors-anywhere.herokuapp.com/https://www.okex.com/api/spot/v3/instruments/LTC-USDT/ticker'
+        let url = 'https://www.okex.com/api/spot/v3/instruments/LTC-USDT/ticker'
         
         return Vue.axios.get(url, {timeout: 5000}) 
     },
     getPairInfoETHBTC() {
-        let url = 'https://cors-anywhere.herokuapp.com/https://www.okex.com/api/spot/v3/instruments/ETH-BTC/ticker'
+        let url = 'https://www.okex.com/api/spot/v3/instruments/ETH-BTC/ticker'
         
         return Vue.axios.get(url, {timeout: 5000}) 
     },
     getPairInfoDSHBTC() {
-        let url = 'https://cors-anywhere.herokuapp.com/https://www.okex.com/api/spot/v3/instruments/DASH-BTC/ticker'
+        let url = 'https://www.okex.com/api/spot/v3/instruments/DASH-BTC/ticker'
         
         return Vue.axios.get(url, {timeout: 5000}) 
     },
     getPairInfoLTCBTC() {
-        let url = 'https://cors-anywhere.herokuapp.com/https://www.okex.com/api/spot/v3/instruments/LTC-BTC/ticker'
+        let url = 'https://www.okex.com/api/spot/v3/instruments/LTC-BTC/ticker'
         
         return Vue.axios.get(url, {timeout: 5000}) 
     },

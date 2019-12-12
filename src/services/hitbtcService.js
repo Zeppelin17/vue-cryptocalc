@@ -8,37 +8,37 @@ export default {
      */
 
     getPairInfoBTCUSD() {
-        let url = 'https://cors-anywhere.herokuapp.com/https://api.hitbtc.com/api/2/public/ticker/BTCUSD'
+        let url = 'https://api.hitbtc.com/api/2/public/ticker/BTCUSD'
         
         return Vue.axios.get(url, {timeout: 5000}) 
     },
     getPairInfoETHUSD() {
-        let url = 'https://cors-anywhere.herokuapp.com/https://api.hitbtc.com/api/2/public/ticker/ETHUSD'
+        let url = 'https://api.hitbtc.com/api/2/public/ticker/ETHUSD'
         
         return Vue.axios.get(url, {timeout: 5000}) 
     },
     getPairInfoDSHUSD() {
-        let url = 'https://cors-anywhere.herokuapp.com/https://api.hitbtc.com/api/2/public/ticker/DASHUSD'
+        let url = 'https://api.hitbtc.com/api/2/public/ticker/DASHUSD'
         
         return Vue.axios.get(url, {timeout: 5000}) 
     },
     getPairInfoLTCUSD() {
-        let url = 'https://cors-anywhere.herokuapp.com/https://api.hitbtc.com/api/2/public/ticker/LTCUSD'
+        let url = 'https://api.hitbtc.com/api/2/public/ticker/LTCUSD'
         
         return Vue.axios.get(url, {timeout: 5000}) 
     },
     getPairInfoETHBTC() {
-        let url = 'https://cors-anywhere.herokuapp.com/https://api.hitbtc.com/api/2/public/ticker/ETHBTC'
+        let url = 'https://api.hitbtc.com/api/2/public/ticker/ETHBTC'
         
         return Vue.axios.get(url, {timeout: 5000}) 
     },
     getPairInfoDSHBTC() {
-        let url = 'https://cors-anywhere.herokuapp.com/https://api.hitbtc.com/api/2/public/ticker/DASHBTC'
+        let url = 'https://api.hitbtc.com/api/2/public/ticker/DASHBTC'
         
         return Vue.axios.get(url, {timeout: 5000}) 
     },
     getPairInfoLTCBTC() {
-        let url = 'https://cors-anywhere.herokuapp.com/https://api.hitbtc.com/api/2/public/ticker/LTCBTC'
+        let url = 'https://api.hitbtc.com/api/2/public/ticker/LTCBTC'
         
         return Vue.axios.get(url, {timeout: 5000}) 
     },
