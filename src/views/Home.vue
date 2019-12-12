@@ -4,6 +4,7 @@
     <BitfinexPairs/>
     <BinancePairs/>
     <HitbtcPairs/>
+    <OkexPairs/>
   </div>
 </template>
 
@@ -13,6 +14,7 @@ import KrakenPairs from '@/components/exchanges/KrakenPairs'
 import BitfinexPairs from '@/components/exchanges/BitfinexPairs'
 import BinancePairs from '@/components/exchanges/BinancePairs'
 import HitbtcPairs from '@/components/exchanges/HitbtcPairs'
+import OkexPairs from '@/components/exchanges/OkexPairs'
 
 export default {
   name: 'home',
@@ -21,6 +23,7 @@ export default {
     BitfinexPairs,
     BinancePairs,
     HitbtcPairs,
+    OkexPairs,
   }
 }
 </script>

@@ -1,53 +1,52 @@
 /**
- * This store module fetches and stores all the pairs data from Hitbtc exchange
+ * This store module fetches and stores all the pairs data from Okex exchange
  */
-import hitbtcService from '@/services/hitbtcService'
-import { FETCH_HITBTC_PAIRS } from '../actionTypes'
-import { SET_HITBTC_PAIRS } from '../mutationTypes'
+import okexService from '@/services/okexService'
+import { FETCH_OKEX_PAIRS } from '../actionTypes'
+import { SET_OKEX_PAIRS } from '../mutationTypes'
 
 export const state = {
     pairs: []
 }
 
 export const actions = {
-    [FETCH_HITBTC_PAIRS]({ commit }) {
+    [FETCH_OKEX_PAIRS]({ commit }) {
         let pairsData = []
-
-        hitbtcService.getPairInfoBTCUSD() 
+        okexService.getPairInfoBTCUSD() 
         .then((response) => {
             //console.log(response)
             pairsData.push(response.data)
 
-            hitbtcService.getPairInfoETHUSD() 
+            okexService.getPairInfoETHUSD() 
             .then((response) => {
                 //console.log(response)
                 pairsData.push(response.data)
 
 
-                hitbtcService.getPairInfoDSHUSD() 
+                okexService.getPairInfoDSHUSD() 
                 .then((response) => {
                     //console.log(response)
                     pairsData.push(response.data)
 
-                    hitbtcService.getPairInfoLTCUSD() 
+                    okexService.getPairInfoLTCUSD() 
                         .then((response) => {
                             //console.log(response)
                             pairsData.push(response.data)
 
 
-                            hitbtcService.getPairInfoETHBTC() 
+                            okexService.getPairInfoETHBTC() 
                             .then((response) => {
                                 //console.log(response)
                                 pairsData.push(response.data)
 
 
-                                hitbtcService.getPairInfoDSHBTC() 
+                                okexService.getPairInfoDSHBTC() 
                                 .then((response) => {
                                     //console.log(response)
                                     pairsData.push(response.data)
 
 
-                                    hitbtcService.getPairInfoLTCBTC() 
+                                    okexService.getPairInfoLTCBTC() 
                                     .then((response) => {
                                         //console.log(response)
                                         pairsData.push(response.data)
@@ -55,42 +54,42 @@ export const actions = {
                                         /**
                                          * Commit to Store
                                          */
-                                        return commit(SET_HITBTC_PAIRS, pairsData)
+                                        return commit(SET_OKEX_PAIRS, pairsData)
                                         
                                     })
                                     .catch((error) => {
-                                        throw new Error(`Error calling Hitbtc API: ${error}`)
+                                        throw new Error(`Error calling Okex API: ${error}`)
                                     })
                                     
                                 })
                                 .catch((error) => {
-                                    throw new Error(`Error calling Hitbtc API: ${error}`)
+                                    throw new Error(`Error calling Okex API: ${error}`)
                                 })
                                 
                             })
                             .catch((error) => {
-                                throw new Error(`Error calling Hitbtc API: ${error}`)
+                                throw new Error(`Error calling Okex API: ${error}`)
                             })
                             
                         })
                         .catch((error) => {
-                            throw new Error(`Error calling Hitbtc API: ${error}`)
+                            throw new Error(`Error calling Okex API: ${error}`)
                         })
                     
                 })
                 .catch((error) => {
-                    throw new Error(`Error calling Hitbtc API: ${error}`)
+                    throw new Error(`Error calling Okex API: ${error}`)
                 })
                 
             })
             .catch((error) => {
-                throw new Error(`Error calling Hitbtc API: ${error}`)
+                throw new Error(`Error calling Okex API: ${error}`)
             })
 
             
         })
         .catch((error) => {
-            throw new Error(`Error calling Hitbtc API: ${error}`)
+            throw new Error(`Error calling Okex API: ${error}`)
         })
 
         
@@ -98,7 +97,7 @@ export const actions = {
 }
 
 export const mutations = {
-    [SET_HITBTC_PAIRS](currentState, pairsData) {
+    [SET_OKEX_PAIRS](currentState, pairsData) {
         //console.log(pairsData)
         let pairsArray = []
         Object.keys(pairsData).forEach(key => {
