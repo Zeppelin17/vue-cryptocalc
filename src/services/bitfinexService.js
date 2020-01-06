@@ -7,9 +7,9 @@ export default {
      * Possible pairs: https://api-pub.bitfinex.com/v2/conf/pub:list:pair:exchange
      */
     getPairsInfo() {
-        let url = 'https://api-pub.bitfinex.com/v2/tickers?symbols=tBTCEUR,tETHEUR,tDSHUSD,tLTCUSD,tETHBTC,tDSHBTC,tLTCBTC'
+        let url = 'https://zeppelin17.pythonanywhere.com/bitfinex/ticker/'
         
-        return Vue.axios.get(url, {timeout: 5000}, {mode: 'no-cors'}) 
+        return Vue.axios.get(url, {timeout: 10000}) 
     }
 }
 

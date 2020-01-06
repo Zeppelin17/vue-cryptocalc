@@ -25,19 +25,7 @@ export const actions = {
 export const mutations = {
     [SET_BITFINEX_PAIRS](currentState, pairsData) {
         
-        let pairsArray = []
-        Object.keys(pairsData).forEach(key => {
-            let tmpObj = {
-                pair: '',
-                pairData: ''
-            }
-            tmpObj.pair = pairsData[key][0]
-            tmpObj.pairData = pairsData[key]
-
-            pairsArray.push(tmpObj)
-        })
-        
-        currentState.pairs = pairsArray
+        currentState.pairs = pairsData
     }
 }
 

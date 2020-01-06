@@ -7,40 +7,10 @@ export default {
      * Possible pairs: https://api.hitbtc.com/api/2/public/symbol
      */
 
-    getPairInfoBTCUSD() {
-        let url = 'https://api.hitbtc.com/api/2/public/ticker/BTCUSD'
+    getPairsInfo() {
+        let url = 'https://zeppelin17.pythonanywhere.com/hitbtc/ticker/'
         
-        return Vue.axios.get(url, {timeout: 5000}) 
-    },
-    getPairInfoETHUSD() {
-        let url = 'https://api.hitbtc.com/api/2/public/ticker/ETHUSD'
-        
-        return Vue.axios.get(url, {timeout: 5000}) 
-    },
-    getPairInfoDSHUSD() {
-        let url = 'https://api.hitbtc.com/api/2/public/ticker/DASHUSD'
-        
-        return Vue.axios.get(url, {timeout: 5000}) 
-    },
-    getPairInfoLTCUSD() {
-        let url = 'https://api.hitbtc.com/api/2/public/ticker/LTCUSD'
-        
-        return Vue.axios.get(url, {timeout: 5000}) 
-    },
-    getPairInfoETHBTC() {
-        let url = 'https://api.hitbtc.com/api/2/public/ticker/ETHBTC'
-        
-        return Vue.axios.get(url, {timeout: 5000}) 
-    },
-    getPairInfoDSHBTC() {
-        let url = 'https://api.hitbtc.com/api/2/public/ticker/DASHBTC'
-        
-        return Vue.axios.get(url, {timeout: 5000}) 
-    },
-    getPairInfoLTCBTC() {
-        let url = 'https://api.hitbtc.com/api/2/public/ticker/LTCBTC'
-        
-        return Vue.axios.get(url, {timeout: 5000}) 
-    },
+        return Vue.axios.get(url, {timeout: 10000}) 
+    }
 }
 
