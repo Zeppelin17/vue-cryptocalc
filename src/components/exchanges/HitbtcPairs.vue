@@ -4,17 +4,40 @@
     <h2>HitBTC Pairs Status</h2>
 
     <transition name="fade">
-        <div v-if="hitbtcData.length">
-          <ul>
-            <li v-for="pair in hitbtcData" :key="pair.pair"> 
-              {{ pair.pair }}
-              <br/>
-            </li>
-          </ul>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm">
+            <div v-if="hitbtcData.length">
+              <table class="table table-dark table-striped">
+                <thead>
+                  <th>Pair</th>
+                  <th>Ask</th>
+                  <th>Bid</th>
+                  <th>High</th>
+                  <th>Low</th>
+                  <th>Volume</th>
+                </thead>
+
+                <tbody>
+                  <tr v-for="pair in hitbtcData" :key="pair.pair"> 
+                    <td>{{ pair.pair }}</td>
+                    <td>{{ pair.ask.price }}</td>
+                    <td>{{ pair.bid.price }}</td>
+                    <td>{{ pair.high.last24 }}</td>
+                    <td>{{ pair.low.last24 }}</td>
+                    <td>{{ pair.volume.last24 }}</td>
+                  </tr>
+                </tbody>
+                
+              </table>
+            </div>
+            <div v-else>
+              <p>Loading...</p>
+            </div>
+          </div>
         </div>
-        <div v-else>
-          <p>Loading...</p>
-        </div>
+      </div>
+        
     </transition>
 
   </div>
