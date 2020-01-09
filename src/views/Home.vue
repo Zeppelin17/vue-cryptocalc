@@ -26,4 +26,6 @@ export default {
     OkexPairs,
   }
 }
+
 </script>
+

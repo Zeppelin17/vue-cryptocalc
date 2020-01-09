@@ -3,10 +3,11 @@
  */
 import okexService from '@/services/okexService'
 import { FETCH_OKEX_PAIRS } from '../actionTypes'
-import { SET_OKEX_PAIRS } from '../mutationTypes'
+import { SET_OKEX_PAIRS, SET_OKEX_ERROR } from '../mutationTypes'
 
 export const state = {
-    pairs: []
+    pairs: [],
+    error: null
 }
 
 export const actions = {
@@ -18,6 +19,7 @@ export const actions = {
                 commit(SET_OKEX_PAIRS, response.data)
             })
             .catch((error) => {
+                commit(SET_OKEX_ERROR, error)
                 throw new Error(`Error calling Okex API: ${error}`)
             })
         
@@ -28,6 +30,13 @@ export const mutations = {
     [SET_OKEX_PAIRS](currentState, pairsData) {
         
         currentState.pairs = pairsData
+        currentState.error = null
+    },
+
+    [SET_OKEX_ERROR](currentState, error) {
+
+        currentState.error = error
+
     }
 }
 

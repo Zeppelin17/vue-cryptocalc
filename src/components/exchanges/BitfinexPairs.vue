@@ -7,7 +7,7 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-sm">
-            <div v-if="bitfinexData.length">
+            <div v-if="bitfinexData.length && bitfinexError === null">
               <table class="table table-dark table-striped">
                 <thead>
                   <th>Pair</th>
@@ -30,6 +30,9 @@
                 </tbody>
                 
               </table>
+            </div>
+            <div v-else-if="bitfinexError !== null">
+              <p>{{ bitfinexError }}</p>
             </div>
             <div v-else>
               <p>Loading...</p>
@@ -60,6 +63,12 @@ export default {
      */
     bitfinexData() {
       return this.$store.state.bitfinexPairs.pairs
+    },
+    /**
+     * Returns the current state of Bitfinex Error
+     */
+    bitfinexError() {
+      return this.$store.state.bitfinexPairs.error
     }
   },
 

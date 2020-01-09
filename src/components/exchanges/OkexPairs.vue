@@ -7,7 +7,7 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-sm">
-            <div v-if="okexData.length">
+            <div v-if="okexData.length && okexError === null">
               <table class="table table-dark table-striped">
                 <thead>
                   <th>Pair</th>
@@ -30,6 +30,9 @@
                 </tbody>
                 
               </table>
+            </div>
+            <div v-else-if="okexError !== null">
+              <p>{{ okexError }}</p>
             </div>
             <div v-else>
               <p>Loading...</p>
@@ -60,6 +63,9 @@ export default {
      */
     okexData() {
       return this.$store.state.okexPairs.pairs
+    },
+    okexError() {
+      return this.$store.state.okexPairs.error
     }
   },
 

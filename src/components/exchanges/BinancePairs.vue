@@ -7,7 +7,7 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-sm">
-            <div v-if="binanceData.length">
+            <div v-if="binanceData.length && binanceError === null">
               <table class="table table-dark table-striped">
                 <thead>
                   <th>Pair</th>
@@ -30,6 +30,9 @@
                 </tbody>
                 
               </table>
+            </div>
+            <div v-else-if="binanceError !== null">
+              <p>{{ binanceError }}</p>
             </div>
             <div v-else>
               <p>Loading...</p>
@@ -60,6 +63,12 @@ export default {
      */
     binanceData() {
       return this.$store.state.binancePairs.pairs
+    },
+    /**
+     * Returns the current state of Binance Error
+     */
+    binanceError() {
+      return this.$store.state.binancePairs.error
     }
   },
 

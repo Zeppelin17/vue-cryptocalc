@@ -7,7 +7,7 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-sm">
-            <div v-if="krakenData.length">
+            <div v-if="krakenData.length && krakenError === null">
               <table class="table table-dark table-striped">
                 <thead>
                   <th>Pair</th>
@@ -30,6 +30,9 @@
                 </tbody>
                 
               </table>
+            </div>
+            <div v-else-if="krakenError !== null">
+              <p>{{ krakenError }}</p>
             </div>
             <div v-else>
               <p>Loading...</p>
@@ -60,6 +63,12 @@ export default {
      */
     krakenData() {
       return this.$store.state.krakenPairs.pairs
+    },
+    /**
+     * Returns the current state of Kraken Error
+     */
+    krakenError() {
+      return this.$store.state.krakenPairs.error
     }
   },
 

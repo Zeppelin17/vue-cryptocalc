@@ -3,10 +3,11 @@
  */
 import bitfinexService from '@/services/bitfinexService'
 import { FETCH_BITFINEX_PAIRS } from '../actionTypes'
-import { SET_BITFINEX_PAIRS } from '../mutationTypes'
+import { SET_BITFINEX_PAIRS, SET_BINANCE_ERROR } from '../mutationTypes'
 
 export const state = {
-    pairs: []
+    pairs: [],
+    error: null
 }
 
 export const actions = {
@@ -17,6 +18,7 @@ export const actions = {
                 commit(SET_BITFINEX_PAIRS, response.data)
             })
             .catch((error) => {
+                commit(SET_BINANCE_ERROR, error)
                 throw new Error(`Error calling Bitfinex API: ${error}`)
             })
     }
@@ -26,6 +28,13 @@ export const mutations = {
     [SET_BITFINEX_PAIRS](currentState, pairsData) {
         
         currentState.pairs = pairsData
+        currentState.error = null
+    },
+
+    [SET_BINANCE_ERROR](currentState, error) {
+
+        currentState.error = error
+
     }
 }
 

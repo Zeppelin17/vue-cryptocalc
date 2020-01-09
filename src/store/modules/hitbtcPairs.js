@@ -3,10 +3,11 @@
  */
 import hitbtcService from '@/services/hitbtcService'
 import { FETCH_HITBTC_PAIRS } from '../actionTypes'
-import { SET_HITBTC_PAIRS } from '../mutationTypes'
+import { SET_HITBTC_PAIRS, SET_HITBTC_ERROR } from '../mutationTypes'
 
 export const state = {
-    pairs: []
+    pairs: [],
+    error: null
 }
 
 export const actions = {
@@ -18,6 +19,7 @@ export const actions = {
                 commit(SET_HITBTC_PAIRS, response.data)
             })
             .catch((error) => {
+                commit(SET_HITBTC_ERROR, error)
                 throw new Error(`Error calling Hitbtc API: ${error}`)
             })
         
@@ -28,6 +30,13 @@ export const mutations = {
     [SET_HITBTC_PAIRS](currentState, pairsData) {
         
         currentState.pairs = pairsData
+        currentState.error = null
+    },
+
+    [SET_HITBTC_ERROR](currentState, error) {
+
+        currentState.error = error
+
     }
 }
 
