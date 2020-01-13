@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import { API_TIMEOUT } from '@/config.js'
 
 export default {
     /**
@@ -8,6 +9,6 @@ export default {
     getPairsInfo() {
         let url = 'https://zeppelin17.pythonanywhere.com/kraken/ticker/'
 
-        return Vue.axios.get(url, {timeout: 10000}) 
+        return Vue.axios.get(url, {timeout: API_TIMEOUT}) 
     }
 }
