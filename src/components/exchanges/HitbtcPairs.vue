@@ -48,12 +48,14 @@
 
 <script>
 import { FETCH_HITBTC_PAIRS } from '@/store/actionTypes'
+import { EXH_INTERVAL_TIMEOUT } from '@/config.js'
 
 export default {
   name: 'HitbtcPairs',
   data() {
     return {
-      
+      //time interval for calling new data to API
+      interval: null
     }
   },
 
@@ -73,13 +75,11 @@ export default {
   },
 
   /**
-   * Before the app is mounted all the data begins to be fetched from the API's
+   * When the app is created all the data begins to be fetched from the API's
    */
-  beforeMount() { 
-    if (!this.$store.state.hitbtcPairs.pairs.length) {
-      this.$store.dispatch(FETCH_HITBTC_PAIRS)
-    }
-    
+  created() {
+      this.interval = setInterval(() => this.$store.dispatch(FETCH_HITBTC_PAIRS), EXH_INTERVAL_TIMEOUT)
+     
   }
 }
 </script>
