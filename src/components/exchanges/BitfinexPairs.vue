@@ -6,6 +6,17 @@
     <transition name="fade">
       <div class="container-fluid">
         <div class="row">
+          <div v-if="stopFetching === false" class="col-sm">
+            <button @click="stopFetching = true" class="btn btn-light">Stop</button>
+            <p>API Calls: <span class="badge badge-success">ON</span></p>
+          </div>
+          <div v-if="stopFetching === true" class="col-sm">
+            <button @click="stopFetching = false" class="btn btn-dark">Start</button>
+            <p>API Calls: <span class="badge badge-secondary">OFF</span></p>
+          </div>
+        </div>
+        
+        <div class="row">
           <div class="col-sm">
             <div v-if="bitfinexData.length && bitfinexError === null">
               <table class="table table-dark table-striped">
@@ -55,7 +66,8 @@ export default {
   data() {
     return {
       //time interval for calling new data to API
-      interval: null
+      interval: null,
+      stopFetching: false,
     }
   },
 
@@ -73,13 +85,39 @@ export default {
       return this.$store.state.bitfinexPairs.error
     }
   },
-
+  methods: {
+    /**
+     * Repeat data fetching
+     */
+    fetchData() { 
+      if (!this.stopFetching) {
+        this.interval = setInterval(() => this.$store.dispatch(FETCH_BITFINEX_PAIRS), EXH_INTERVAL_TIMEOUT)
+      }
+      
+    },
+  },
+  watch: {
+    stopFetching: function(stop) {
+      if (!stop) {
+        this.fetchData()
+      }else{
+        clearInterval(this.interval)
+      }
+    }
+  },
+  
   /**
-   * When the app is created all the data begins to be fetched from the API's
+   * Before the app is mounted all the data begins to be fetched from the API's
    */
-  created() { 
-    this.interval = setInterval(() => this.$store.dispatch(FETCH_BITFINEX_PAIRS), EXH_INTERVAL_TIMEOUT)
+  beforeMount() { 
+    if (!this.$store.state.bitfinexPairs.pairs.length) {
+      this.$store.dispatch(FETCH_BITFINEX_PAIRS)
+    }
     
+  },
+  //call method to activate interval
+  mounted() {
+    this.fetchData();
   }
 }
 </script>

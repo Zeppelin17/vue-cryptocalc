@@ -1,10 +1,22 @@
 <template>
   <div class="hello">
     <img class="logo" alt="Kraken logo" src="../../assets/logo-kraken.png">
+    
     <h2>Kraken Pairs Status</h2>
 
     <transition name="fade">
       <div class="container-fluid">
+        <div class="row">
+          <div v-if="stopFetching === false" class="col-sm">
+            <button @click="stopFetching = true" class="btn btn-light">Stop</button>
+            <p>API Calls: <span class="badge badge-success">ON</span></p>
+          </div>
+          <div v-if="stopFetching === true" class="col-sm">
+            <button @click="stopFetching = false" class="btn btn-dark">Start</button>
+            <p>API Calls: <span class="badge badge-secondary">OFF</span></p>
+          </div>
+        </div>
+
         <div class="row">
           <div class="col-sm">
             <div v-if="krakenData.length && krakenError === null">
@@ -54,7 +66,8 @@ export default {
   data() {
     return {
       //time interval for calling new data to API
-      interval: null
+      interval: null,
+      stopFetching: false,
     }
   },
 
@@ -73,13 +86,41 @@ export default {
     }
   },
 
-  /**
-   * When the app is created all the data begins to be fetched from the API's
+  methods: {
+    /**
+     * Repeat data fetching
+     */
+    fetchData() { 
+      if (!this.stopFetching) {
+        this.interval = setInterval(() => this.$store.dispatch(FETCH_KRAKEN_PAIRS), EXH_INTERVAL_TIMEOUT)
+      }
+    },
+  },
+  watch: {
+    stopFetching: function(stop) {
+      if (!stop) {
+        this.fetchData()
+      }else{
+        clearInterval(this.interval)
+      }
+    }
+  },
+    /**
+   * Before the app is mounted all the data begins to be fetched from the API's
    */
-  created() { 
-    this.interval = setInterval(() => this.$store.dispatch(FETCH_KRAKEN_PAIRS), EXH_INTERVAL_TIMEOUT)
+  beforeMount() { 
+    if (!this.$store.state.krakenPairs.pairs.length) {
+      this.$store.dispatch(FETCH_KRAKEN_PAIRS)
+    }
     
+  },
+  //call method to activate interval
+  mounted() {
+    this.fetchData();
   }
+
+
+
 }
 </script>
 
