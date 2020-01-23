@@ -1,29 +1,46 @@
 <template>
   <div class="home">
-    <KrakenPairs/>
-    <BitfinexPairs/>
-    <BinancePairs/>
-    <HitbtcPairs/>
-    <OkexPairs/>
+    <Exchange
+      exchangeName="Kraken"
+      logo="logo-kraken.png"
+      storeModuleName="krakenPairs">
+    </Exchange>
+
+    <Exchange
+      exchangeName="Bitfinex"
+      logo="logo-bitfinex.png"
+      storeModuleName="bitfinexPairs">
+    </Exchange>
+
+    <Exchange
+      exchangeName="Binance"
+      logo="logo-binance.png"
+      storeModuleName="binancePairs">
+    </Exchange>
+
+    <Exchange
+      exchangeName="Hitbtc"
+      logo="logo-hitbtc.png"
+      storeModuleName="hitbtcPairs">
+    </Exchange>
+
+    <Exchange
+      exchangeName="Okex"
+      logo="logo-okex.png"
+      storeModuleName="okexPairs">
+    </Exchange>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import KrakenPairs from '@/components/exchanges/KrakenPairs'
-import BitfinexPairs from '@/components/exchanges/BitfinexPairs'
-import BinancePairs from '@/components/exchanges/BinancePairs'
-import HitbtcPairs from '@/components/exchanges/HitbtcPairs'
-import OkexPairs from '@/components/exchanges/OkexPairs'
+import Exchange from '@/components/exchanges/Exchange'
+
 
 export default {
   name: 'home',
   components: {
-    KrakenPairs,
-    BitfinexPairs,
-    BinancePairs,
-    HitbtcPairs,
-    OkexPairs,
+    Exchange
   }
 }
 
