@@ -148,29 +148,26 @@ export default {
   mounted() {
     /**
      * calling the method to set a time interval to repeat data fetching.
-     * if there is no data still, directly initialitze it
      */
-    if (!this.$store.state[this.storeModuleName].pairs.length) {
-        switch (this.storeModuleName) {
-            case "krakenPairs":
-                this.$store.dispatch(FETCH_KRAKEN_PAIRS)
-                break;
-            case "bitfinexPairs":
-                this.$store.dispatch(FETCH_BITFINEX_PAIRS)
-                break;
-            case "binancePairs":
-                this.$store.dispatch(FETCH_BINANCE_PAIRS)
-                break;
-            case "hitbtcPairs":
-                this.$store.dispatch(FETCH_HITBTC_PAIRS)
-                break;
-            case "okexPairs":
-                this.$store.dispatch(FETCH_OKEX_PAIRS)
-                break;
-        
-        }
-      
+    switch (this.storeModuleName) {
+        case "krakenPairs":
+            this.$store.dispatch(FETCH_KRAKEN_PAIRS)
+            break;
+        case "bitfinexPairs":
+            this.$store.dispatch(FETCH_BITFINEX_PAIRS)
+            break;
+        case "binancePairs":
+            this.$store.dispatch(FETCH_BINANCE_PAIRS)
+            break;
+        case "hitbtcPairs":
+            this.$store.dispatch(FETCH_HITBTC_PAIRS)
+            break;
+        case "okexPairs":
+            this.$store.dispatch(FETCH_OKEX_PAIRS)
+            break;
+    
     }
+    
     this.fetchData();
   },
   beforeDestroy() {
