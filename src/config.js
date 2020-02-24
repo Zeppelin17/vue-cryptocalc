@@ -1,2 +1,3 @@
 export const API_TIMEOUT = 15000
 export const EXH_INTERVAL_TIMEOUT = 25000
+export const CALC_INTERVAL_CHECK = 5000
