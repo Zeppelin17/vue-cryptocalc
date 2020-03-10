@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <h2>Parameters</h2>
-            <form>
+            <form class="col-sm-12">
                 <div class="form-row">
                     <div class="form-group col-sm-12 col-md-3">
                         <label for="pair">Pair</label>
