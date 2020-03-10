@@ -9,3 +9,5 @@ export const SET_BITFINEX_ERROR = 'setBitfinexError'
 export const SET_BINANCE_ERROR = 'setBinanceError'
 export const SET_HITBTC_ERROR = 'setHitbtcError'
 export const SET_OKEX_ERROR = 'setOkexError'
+
+export const STORE_ARB_OPPORTUNITIES = 'storeArbOpportunities'

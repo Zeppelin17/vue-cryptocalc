@@ -1,15 +1,13 @@
 <template>
     <div>
-        <h2>Possible operations</h2>
-        <!-- 1- guardar por cada par todos los ASK y BID de todos los exchange -->
-        <!-- 2- comparativa -->
-        <!-- 3- presentación en formato tabla -->
-        <!-- 3.1- columnas de beneficio en % y num, %fee... -->
+        <CalculatorParameters />
+
+        <h2>All possible operations</h2>
         <div v-if="opportunities.length > 0">
             <transition name="fade">
                 <div class="container-fluid">
                     <div class="row">
-                        <div v-for="(opp, index) in opportunities" :key="`${index}`" class="col-sm"> 
+                        <div v-for="(opp, index) in opportunities" :key="`${index}`" class="col-sm-12"> 
                             <table class="table table-dark table-striped">
                                 <caption>{{ opp.exchanges }}</caption>
                                 <thead>
@@ -49,12 +47,17 @@ import {
     FETCH_BITFINEX_PAIRS,
     FETCH_BINANCE_PAIRS,
     FETCH_HITBTC_PAIRS,
-    FETCH_OKEX_PAIRS
+    FETCH_OKEX_PAIRS,
+    ACT_STORE_ARB_OPPORTUNITIES
     } from '@/store/actionTypes'
 import { EXH_INTERVAL_TIMEOUT, CALC_INTERVAL_CHECK } from '@/config.js'
+import CalculatorParameters from './CalculatorParameters'
 
 export default {
     name: 'OpportunitiesList',
+    components: {
+        CalculatorParameters
+    },
     data() {
         return {
             opportunities: [],
@@ -141,6 +144,8 @@ export default {
             this.opportunities.push(this.searchArbitrageOpportunities(this.binancePairs, this.hitbtcPairs))
             this.opportunities.push(this.searchArbitrageOpportunities(this.binancePairs, this.okexPairs))
             this.opportunities.push(this.searchArbitrageOpportunities(this.hitbtcPairs, this.okexPairs))
+
+            this.storeOpportunities()
         },
         /**
          * Method to fetch API's data
@@ -151,6 +156,12 @@ export default {
             this.$store.dispatch(FETCH_BINANCE_PAIRS)
             this.$store.dispatch(FETCH_HITBTC_PAIRS)
             this.$store.dispatch(FETCH_OKEX_PAIRS)
+        },
+        /**
+         * Method to store opportunities data in vuex
+         */
+        storeOpportunities() {
+            this.$store.dispatch(ACT_STORE_ARB_OPPORTUNITIES, this.opportunities)
         }
     },
     mounted() {

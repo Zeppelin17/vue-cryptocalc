@@ -6,6 +6,7 @@ import bitfinexPairs from './modules/bitfinexPairs'
 import binancePairs from './modules/binancePairs'
 import hitbtcPairs from './modules/hitbtcPairs'
 import okexPairs from './modules/okexPairs'
+import arbOpportunities from './modules/arbOpportunities'
 
 Vue.use(Vuex)
 
@@ -16,6 +17,7 @@ export default new Vuex.Store({
     binancePairs,
     hitbtcPairs,
     okexPairs,
+    arbOpportunities,
   },
   state: {
     
