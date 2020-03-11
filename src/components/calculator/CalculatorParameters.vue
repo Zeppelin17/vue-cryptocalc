@@ -5,7 +5,10 @@
             <form class="col-sm-12">
                 <div class="form-row">
                     <div class="form-group col-sm-12 col-md-3">
-                        <label for="pair">Pair</label>
+                        <label for="pair">
+                            Pair 
+                            <font-awesome-icon :icon="['fas', 'info-circle']" id="param-pair-icon"/>
+                        </label>
                         <select 
                             name="pair" 
                             id="param-pair" 
@@ -23,7 +26,10 @@
                     </div>
 
                     <div class="form-group col-sm-12 col-md-3">
-                        <label for="lots">Lots</label>
+                        <label for="lots">
+                            Lots
+                            <font-awesome-icon :icon="['fas', 'info-circle']" id="param-lots-icon"/>
+                        </label>
                         <input 
                             type="number" 
                             step="0.000001" 
@@ -35,7 +41,10 @@
                     </div>
 
                     <div class="form-group col-sm-12 col-md-3">
-                        <label for="minProfit">Minimum profit (%)</label>
+                        <label for="minProfit">
+                            Minimum profit (%)
+                            <font-awesome-icon :icon="['fas', 'info-circle']" id="param-minProfit-icon"/>
+                        </label>
                         <input 
                             type="number" 
                             step="0.1" 
@@ -47,7 +56,10 @@
                     </div>
 
                     <div class="form-group col-sm-12 col-md-3">
-                        <label for="fees">Total fees (%)</label>
+                        <label for="fees">
+                            Total fees (%)
+                            <font-awesome-icon :icon="['fas', 'info-circle']" id="param-fees-icon"/>
+                        </label>
                         <input 
                             type="number" 
                             name="fees" 
@@ -69,6 +81,22 @@
                         >
                     </div>
                 </div>
+
+                <b-tooltip target="param-pair-icon">
+                    Search operations for this pair. You buy/sell the left currency with the right one.
+                </b-tooltip>
+                <b-tooltip target="param-lots-icon">
+                    Amount of the operation. For example, in the pair BTC-USD with a lot of 100, 
+                    means that every buy/sell operation done will be for 100 USD.
+                </b-tooltip>
+                <b-tooltip target="param-minProfit-icon">
+                    Benefit or profit you want to achieve in each buy/sell operation. All the operations below that
+                    minimum percentage will be discarded.
+                </b-tooltip>
+                <b-tooltip target="param-fees-icon">
+                    Simulation of total fees you will be charged. Every Exchange has it's own fees
+                    (for operation, for converting currencies, etc.).
+                </b-tooltip>
 
                 <div class="form-row">
                     <div class="form-group col-sm-12">
@@ -201,7 +229,7 @@
                 >
                 </b-pagination>
                 <b-table 
-                    class="table table-dark table-striped"
+                    class="table table-striped"
                     id="oppFoundTable"
                     :items="opportunitiesFound"
                     :per-page="perPage"
