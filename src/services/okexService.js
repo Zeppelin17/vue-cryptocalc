@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import { API_TIMEOUT } from '@/config.js'
+import { API_TIMEOUT, OKEX_TICKER } from '@/config.js'
 
 export default {
     /**
@@ -9,7 +9,7 @@ export default {
      */
 
     getPairsInfo() {
-        let url = 'https://zeppelin17.pythonanywhere.com/okex/ticker/'
+        let url = OKEX_TICKER
         
         return Vue.axios.get(url, {timeout: API_TIMEOUT}) 
     }

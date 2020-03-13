@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import { API_TIMEOUT } from '@/config.js'
+import { API_TIMEOUT, HITBTC_TICKER } from '@/config.js'
 
 export default {
     /**
@@ -9,7 +9,7 @@ export default {
      */
 
     getPairsInfo() {
-        let url = 'https://zeppelin17.pythonanywhere.com/hitbtc/ticker/'
+        let url = HITBTC_TICKER
         
         return Vue.axios.get(url, {timeout: API_TIMEOUT}) 
     }

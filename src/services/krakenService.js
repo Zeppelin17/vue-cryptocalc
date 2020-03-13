@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import { API_TIMEOUT } from '@/config.js'
+import { API_TIMEOUT, KRAKEN_TICKER } from '@/config.js'
 
 export default {
     /**
@@ -7,7 +7,7 @@ export default {
      * Docs at: https://www.kraken.com/features/api#get-ticker-info
      */
     getPairsInfo() {
-        let url = 'https://zeppelin17.pythonanywhere.com/kraken/ticker/'
+        let url = KRAKEN_TICKER
 
         return Vue.axios.get(url, {timeout: API_TIMEOUT}) 
     }

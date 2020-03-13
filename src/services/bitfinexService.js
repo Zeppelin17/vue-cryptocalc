@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import { API_TIMEOUT } from '@/config.js'
+import { API_TIMEOUT, BITFINEX_TICKER } from '@/config.js'
 
 export default {
     /**
@@ -8,7 +8,7 @@ export default {
      * Possible pairs: https://api-pub.bitfinex.com/v2/conf/pub:list:pair:exchange
      */
     getPairsInfo() {
-        let url = 'https://zeppelin17.pythonanywhere.com/bitfinex/ticker/'
+        let url = BITFINEX_TICKER
         
         return Vue.axios.get(url, {timeout: API_TIMEOUT}) 
     }
