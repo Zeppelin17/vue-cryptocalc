@@ -20,7 +20,7 @@
         <div class="row">
           <div class="col-sm">
             <div v-if="exchangeData.length && exchangeError === null">
-              <table class="table table-dark table-striped">
+              <table class="table table-striped">
                 <thead>
                   <th>Pair</th>
                   <th>Ask</th>

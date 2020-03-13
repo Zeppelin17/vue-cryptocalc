@@ -1,9 +1,16 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/calculator">CryptoCalc</router-link>
-    </div>
+    <b-navbar toggleable="sm" type="dark" variant="dark" sticky=true>
+      <b-navbar-brand>Arbitrage Calculator</b-navbar-brand>
+      <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+      <b-collapse id="nav-collapse" is-nav>
+        <b-navbar-nav class="ml-auto">
+          <b-nav-item to="/">Home</b-nav-item>
+          <b-nav-item to="/calculator">CryptoCalc</b-nav-item>
+        </b-navbar-nav>
+      </b-collapse>
+    </b-navbar>
+
     <router-view/>
   </div>
 </template>
@@ -17,16 +24,7 @@
   color: #2c3e50;
 }
 
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
+nav.navbar {
+  margin-bottom: 15px;
 }
 </style>

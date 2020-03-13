@@ -8,7 +8,7 @@
                 <div class="container-fluid">
                     <div class="row">
                         <div v-for="(opp, index) in opportunities" :key="`${index}`" class="col-sm-12"> 
-                            <table class="table table-dark table-striped">
+                            <table class="table table-striped">
                                 <caption>{{ opp.exchanges }}</caption>
                                 <thead>
                                     <th>Pair</th>
