@@ -17,6 +17,9 @@ import { fas } from '@fortawesome/free-solid-svg-icons'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+
 library.add(fas)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
@@ -24,6 +27,9 @@ Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({
+  created () {
+    AOS.init()
+  },
   router,
   store,
   render: h => h(App)

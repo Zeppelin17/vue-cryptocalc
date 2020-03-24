@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
+  <div class="calculator">
     <h1>Arbitrage calculator</h1>
     <OpportunitiesList/>
   </div>
