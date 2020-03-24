@@ -1,14 +1,14 @@
 <template>
-    <div>
+    <div class="all-possibnle-operations">
         <CalculatorParameters />
 
         <h2>All possible operations</h2>
         <div v-if="opportunities.length > 0">
             <transition name="fade">
-                <div class="container-fluid">
+                <div class="container">
                     <div class="row">
                         <div v-for="(opp, index) in opportunities" :key="`${index}`" class="col-sm-12"> 
-                            <table class="table table-striped">
+                            <table class="table table-striped all-opp-table">
                                 <caption>{{ opp.exchanges }}</caption>
                                 <thead>
                                     <th>Pair</th>
@@ -190,6 +190,13 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.all-possibnle-operations h2{
+    margin-top: 50px
+}
+.all-opp-table {
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
 table caption{
     caption-side: top
 }

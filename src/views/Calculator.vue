@@ -14,3 +14,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+  .calculator {
+    margin-top: 20px;
+  }
+
+</style>

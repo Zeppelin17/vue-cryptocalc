@@ -1,11 +1,11 @@
 <template>
-  <div class="hello">
+  <div class="exchange-component">
     <img class="logo" :alt="exchangeName" :src="logoURL">
     
     <h2>{{exchangeName}} Pairs Status</h2>
 
     <transition name="fade">
-      <div class="container-fluid">
+      <div class="container">
         <div class="row">
           <div v-if="stopFetching === false" class="col-sm">
             <button @click="stopFetching = true" class="btn btn-light">Stop</button>
@@ -183,6 +183,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.exchange-component {
+  margin-top: 20px;
+  margin-bottom: 100px;
+}
 h3 {
   margin: 40px 0 0;
 }
