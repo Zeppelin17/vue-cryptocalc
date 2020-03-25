@@ -76,12 +76,12 @@
             operations (sell), you are selling BTC earning USD.</p>
           <p>In other words, you buy/sell the left side of the pair (BTC) using the currency in the right side (USD).</p>
 
-          <p>Then, you see that buying price in the exchange Binance is 6000 while at the same time, 
-            selling price in exchange Kraken is 6500.</p>
+          <p>Then, you see that buying price in Binance exchange is 6000 while at the same time, 
+            selling price in Kraken exchange is 6500.</p>
           <p>If you simultaneously buy 1 BTC in Binance and sell it in Kraken, you get 500 USD of profit. 
             Of course, you don't need to spend 6000 USD, you can play with lower quantities. This is what is 
-            called "lots". You can just buy/sell 0,033 BTC (wich cost is 200 USD) and sell it for 214,5 USD</p>
-          <p>In this example 200 is the lot. <strong>If you repeat this operation few times, you get an interesting profit</strong>.</p>
+            called "lots". You can just buy/sell 0,033 BTC (which cost is 200 USD) and sell it for 214,5 USD</p>
+          <p>In this case we're using the amount 200 as a lot parameter. <strong>If you repeat this operation some times, you get an interesting profit</strong>.</p>
         </div>
 
 
@@ -139,10 +139,25 @@
 
 <script>
 
+import { 
+    FETCH_KRAKEN_PAIRS, 
+    FETCH_BITFINEX_PAIRS,
+    FETCH_BINANCE_PAIRS,
+    FETCH_HITBTC_PAIRS,
+    FETCH_OKEX_PAIRS
+    } from '@/store/actionTypes'
 
 export default {
   // AOS (Animate On Scroll) Docs: https://github.com/michalsnik/aos#animations
-  name: 'home'
+  name: 'home',
+  mounted() {
+    // we fetch all the data right now, so when the user goes to another page it already has some initial data to update
+    this.$store.dispatch(FETCH_KRAKEN_PAIRS)
+    this.$store.dispatch(FETCH_BITFINEX_PAIRS)
+    this.$store.dispatch(FETCH_BINANCE_PAIRS)
+    this.$store.dispatch(FETCH_HITBTC_PAIRS)
+    this.$store.dispatch(FETCH_OKEX_PAIRS)
+  }
 }
 
 </script>
