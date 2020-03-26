@@ -1,3 +1,14 @@
+<script>
+/**
+ * View showing home page
+ *
+ * @summary View showing home page
+ * @author Zeppelin17 <elzeppelin17@gmail.com>
+ *
+ * Created at     : 2020-03-26 06:40:05 
+ * Last modified  : 2020-03-26 06:45:25
+ */
+</script>
 <template>
   <div id="component-wrapper">
     <div id="heroimage">

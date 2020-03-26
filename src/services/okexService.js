@@ -1,3 +1,13 @@
+/**
+ * API call to get Okex data
+ *
+ * @summary API call to get Okex data
+ * @author Zeppelin17 <elzeppelin17@gmail.com>
+ *
+ * Created at     : 2020-03-26 06:54:57 
+ * Last modified  : 2020-03-26 06:55:14
+ */
+
 import Vue from 'vue'
 import { API_TIMEOUT, OKEX_TICKER } from '@/config.js'
 

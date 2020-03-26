@@ -1,3 +1,13 @@
+/**
+ * Vuex store main file
+ *
+ * @summary Vuex store main file
+ * @author Zeppelin17 <elzeppelin17@gmail.com>
+ *
+ * Created at     : 2020-03-26 06:46:33 
+ * Last modified  : 2020-03-26 06:46:50
+ */
+
 import Vue from 'vue'
 import Vuex from 'vuex'
 

@@ -1,6 +1,13 @@
 /**
  * This store module fetches and stores all the pairs data from Kraken exchange
+ *
+ * @summary This store module fetches and stores all the pairs data from Kraken exchange
+ * @author Zeppelin17 <elzeppelin17@gmail.com>
+ *
+ * Created at     : 2020-03-26 06:50:17 
+ * Last modified  : 2020-03-26 06:50:46
  */
+
 import krakenService from '@/services/krakenService'
 import { FETCH_KRAKEN_PAIRS } from '../actionTypes'
 import { SET_KRAKEN_PAIRS, SET_KRAKEN_ERROR } from '../mutationTypes'

@@ -1,3 +1,14 @@
+<script>
+/**
+ * Vue CLI project main App file
+ *
+ * @summary Vue CLI project main App file
+ * @author Zeppelin17 <elzeppelin17@gmail.com>
+ *
+ * Created at     : 2020-03-26 06:30:34 
+ * Last modified  : 2020-03-26 06:33:24
+ */
+</script>
 <template>
   <div id="app">
     <b-navbar toggleable="sm" type="dark" variant="dark" sticky=true>

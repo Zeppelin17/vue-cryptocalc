@@ -1,6 +1,13 @@
 /**
  * This store module fetches and stores all the pairs data from Binance exchange
+ *
+ * @summary This store module fetches and stores all the pairs data from Binance exchange
+ * @author Zeppelin17 <elzeppelin17@gmail.com>
+ *
+ * Created at     : 2020-03-26 06:51:42 
+ * Last modified  : 2020-03-26 06:52:01
  */
+
 import binanceService from '@/services/binanceService'
 import { FETCH_BINANCE_PAIRS } from '../actionTypes'
 import { SET_BINANCE_PAIRS, SET_BINANCE_ERROR } from '../mutationTypes'

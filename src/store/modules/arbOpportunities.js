@@ -1,6 +1,13 @@
 /**
  * This store module stores arbitrage opportunities
+ *
+ * @summary This store module stores arbitrage opportunities
+ * @author Zeppelin17 <elzeppelin17@gmail.com>
+ *
+ * Created at     : 2020-03-26 06:52:14 
+ * Last modified  : 2020-03-26 06:52:14 
  */
+
 import { ACT_STORE_ARB_OPPORTUNITIES } from '../actionTypes'
 import { STORE_ARB_OPPORTUNITIES } from '../mutationTypes'
 

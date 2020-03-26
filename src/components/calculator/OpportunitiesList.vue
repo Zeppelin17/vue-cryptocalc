@@ -1,3 +1,14 @@
+<script>
+/**
+ * Vue component that loads all possible operations between exchanges.
+ *
+ * @summary Vue component that loads all possible operations between exchanges.
+ * @author Zeppelin17 <elzeppelin17@gmail.com>
+ *
+ * Created at     : 2020-03-26 06:56:27 
+ * Last modified  : 2020-03-26 06:58:36
+ */
+</script>
 <template>
     <div class="all-possibnle-operations">
         <CalculatorParameters />

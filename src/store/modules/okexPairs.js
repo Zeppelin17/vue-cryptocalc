@@ -1,6 +1,14 @@
 /**
  * This store module fetches and stores all the pairs data from Okex exchange
+ *
+ * @summary This store module fetches and stores all the pairs data from Okex exchange
+ * @author Zeppelin17 <elzeppelin17@gmail.com>
+ *
+ * Created at     : 2020-03-26 06:49:42 
+ * Last modified  : 2020-03-26 06:50:00
  */
+
+ 
 import okexService from '@/services/okexService'
 import { FETCH_OKEX_PAIRS } from '../actionTypes'
 import { SET_OKEX_PAIRS, SET_OKEX_ERROR } from '../mutationTypes'

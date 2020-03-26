@@ -1,3 +1,15 @@
+<script>
+/**
+ * Vue component that loads an exchange info section.
+ *
+ * @summary Vue component that loads an exchange info section.
+ * @author Zeppelin17 <elzeppelin17@gmail.com>
+ *
+ * Created at     : 2020-03-26 06:56:27 
+ * Last modified  : 2020-03-26 06:57:29
+ */
+</script>
+
 <template>
   <div class="exchange-component">
     <img class="logo" :alt="exchangeName" :src="logoURL">

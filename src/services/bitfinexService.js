@@ -1,3 +1,13 @@
+/**
+ * API call to get Bitfinex data
+ *
+ * @summary API call to get Bitfinex data
+ * @author Zeppelin17 <elzeppelin17@gmail.com>
+ *
+ * Created at     : 2020-03-26 06:53:58 
+ * Last modified  : 2020-03-26 06:53:58 
+ */
+
 import Vue from 'vue'
 import { API_TIMEOUT, BITFINEX_TICKER } from '@/config.js'
 

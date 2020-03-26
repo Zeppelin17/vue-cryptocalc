@@ -1,3 +1,13 @@
+/**
+ * API call to get Binance data
+ *
+ * @summary API call to get Binance data
+ * @author Zeppelin17 <elzeppelin17@gmail.com>
+ *
+ * Created at     : 2020-03-26 06:53:11 
+ * Last modified  : 2020-03-26 06:53:54
+ */
+
 import Vue from 'vue'
 import { API_TIMEOUT, BINANCE_TICKER } from '@/config.js'
 

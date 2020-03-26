@@ -1,3 +1,13 @@
+/**
+ * API call to get HitBTC data
+ *
+ * @summary API call to get HitBTC data
+ * @author Zeppelin17 <elzeppelin17@gmail.com>
+ *
+ * Created at     : 2020-03-26 06:54:18 
+ * Last modified  : 2020-03-26 06:54:36
+ */
+
 import Vue from 'vue'
 import { API_TIMEOUT, HITBTC_TICKER } from '@/config.js'
 

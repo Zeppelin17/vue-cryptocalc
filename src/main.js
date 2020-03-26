@@ -1,4 +1,15 @@
-import Vue from 'vue'
+/**
+ * Vue CLI project main js file
+ *
+ * @summary Vue CLI project main js file
+ * @author Zeppelin17 <elzeppelin17@gmail.com>
+ *
+ * Created at     : 2020-03-26 06:29:46 
+ * Last modified  : 2020-03-26 06:30:13
+ */
+
+
+import Vue from 'vue' 
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import App from './App.vue'

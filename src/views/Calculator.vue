@@ -1,3 +1,14 @@
+<script>
+/**
+ * View showing the calculator
+ *
+ * @summary View showing the calculator
+ * @author Zeppelin17 <elzeppelin17@gmail.com>
+ *
+ * Created at     : 2020-03-26 06:40:05 
+ * Last modified  : 2020-03-26 06:41:32
+ */
+</script>
 <template>
   <div class="calculator">
     <h1>Arbitrage calculator</h1>

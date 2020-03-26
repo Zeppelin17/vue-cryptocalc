@@ -1,3 +1,14 @@
+<script>
+/**
+ * Vue component that loads a parameters form to search opportunities.
+ *
+ * @summary Vue component that loads a parameters form to search opportunities.
+ * @author Zeppelin17 <elzeppelin17@gmail.com>
+ *
+ * Created at     : 2020-03-26 06:56:27 
+ * Last modified  : 2020-03-26 07:00:27
+ */
+</script>
 <template>
     <div class="container">
         <div class="row">

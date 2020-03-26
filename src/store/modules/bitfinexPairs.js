@@ -1,6 +1,13 @@
 /**
  * This store module fetches and stores all the pairs data from Bitfinex exchange
+ *
+ * @summary This store module fetches and stores all the pairs data from Bitfinex exchange
+ * @author Zeppelin17 <elzeppelin17@gmail.com>
+ *
+ * Created at     : 2020-03-26 06:51:15 
+ * Last modified  : 2020-03-26 06:51:35
  */
+
 import bitfinexService from '@/services/bitfinexService'
 import { FETCH_BITFINEX_PAIRS } from '../actionTypes'
 import { SET_BITFINEX_PAIRS, SET_BINANCE_ERROR } from '../mutationTypes'

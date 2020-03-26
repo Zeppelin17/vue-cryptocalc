@@ -1,3 +1,13 @@
+/**
+ * Mutation types constants for Vuex
+ *
+ * @summary Mutation types constants for Vuex
+ * @author Zeppelin17 <elzeppelin17@gmail.com>
+ *
+ * Created at     : 2020-03-26 06:48:35 
+ * Last modified  : 2020-03-26 06:48:35 
+ */
+
 export const SET_KRAKEN_PAIRS = 'setKrakenPairs'
 export const SET_BITFINEX_PAIRS = 'setBitfinexPairs'
 export const SET_BINANCE_PAIRS = 'setBinancePairs'

@@ -1,3 +1,14 @@
+<script>
+/**
+ * View showing exchanges pairs info
+ *
+ * @summary View showing exchanges pairs info
+ * @author Zeppelin17 <elzeppelin17@gmail.com>
+ *
+ * Created at     : 2020-03-26 06:40:05 
+ * Last modified  : 2020-03-26 06:46:07
+ */
+</script>
 <template>
   <div class="exchanges-resume">
     <Exchange
