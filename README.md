@@ -1,29 +1,22 @@
-# vue-cryptocalc
+# Arbitrage Calculator
+This is a calculator that let's you discover some arbitrage opportunities between different pairs of crypto currencies. You can set some parameters to find only the opportunities you want and discard the one's that are not interesting.
 
-## Project setup
+# How to install
+This application has two parts:
+- frontend: is a Vue CLI project
+- backend: is a Django project
+
+## Frontend
+Clone the repository and run:
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+Then, you just have to:
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
-```
-npm run build
-```
+and open it with your browser.
 
-### Run your tests
-```
-npm run test
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Backend
